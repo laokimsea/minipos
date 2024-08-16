@@ -1,6 +1,8 @@
 package com.example.minipos.service;
 
 import com.example.minipos.entity.Brand;
+import com.example.minipos.response.BrandResponse;
+
 import java.util.List;
 
 public interface BrandService {
@@ -11,7 +13,7 @@ public interface BrandService {
 
     Brand update(Long id, Brand brand);
 
-    List<Brand> getAllBrands();
+    List<BrandResponse> getAllBrands();
 
-    void deleteById(Long id);
+    Brand deleteById(Long id);
 }

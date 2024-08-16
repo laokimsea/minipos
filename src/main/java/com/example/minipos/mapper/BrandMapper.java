@@ -1,19 +1,14 @@
 package com.example.minipos.mapper;
 
-import com.example.minipos.dto.BrandDTO;
 import com.example.minipos.entity.Brand;
+import com.example.minipos.request.BrandRequest;
+import com.example.minipos.response.BrandResponse;
+import org.mapstruct.Mapper;
 
-public class BrandMapper {
-    public static Brand toBrand(BrandDTO dto) {
-        Brand brand = new Brand();
-        brand.setName(dto.getName());
-        return brand;
-    }
+@Mapper(componentModel = "spring")
+public interface BrandMapper {
 
-    public static BrandDTO toBrandDTO(Brand entity) {
-        BrandDTO dto = new BrandDTO();
-        dto.setName(entity.getName());
-        dto.setId(entity.getId());
-        return dto;
-    }
+    Brand toEntity(BrandRequest request);
+
+    BrandResponse toDto(Brand entity);
 }
